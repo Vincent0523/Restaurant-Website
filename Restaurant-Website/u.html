@@ -1,0 +1,733 @@
+// api.js - API and MongoDB Integration
+
+// Function to fetch menu items from MongoDB (simulated for frontend demo)
+function fetchMenuItems(branch) {
+    return new Promise((resolve, reject) => {
+        // In a real application, we would make an API call to MongoDB
+        // For demonstration, we'll simulate the API response with sample data
+        setTimeout(() => {
+            try {
+                // Sample menu items data based on branch
+                const menuItemsData = {
+                    downtown: [
+                        {
+                            _id: "d1",
+                            name: "Classic Burger",
+                            description: "Juicy beef patty with lettuce, tomato, onion, and our special sauce",
+                            price: 12.99,
+                            category: "main",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "d2",
+                            name: "Chicken Caesar Salad",
+                            description: "Fresh romaine lettuce with grilled chicken, croutons, and Caesar dressing",
+                            price: 9.99,
+                            category: "main",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "d3",
+                            name: "Garlic Breadsticks",
+                            description: "Warm breadsticks brushed with garlic butter and herbs",
+                            price: 5.99,
+                            category: "starters",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "d4",
+                            name: "Chocolate Brownie",
+                            description: "Rich chocolate brownie served with vanilla ice cream",
+                            price: 6.99,
+                            category: "desserts",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "d5",
+                            name: "French Fries",
+                            description: "Crispy golden fries seasoned with sea salt",
+                            price: 3.99,
+                            category: "sides",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "d6",
+                            name: "Soda",
+                            description: "Choice of Coke, Diet Coke, Sprite, or Fanta",
+                            price: 2.49,
+                            category: "drinks",
+                            image: "/api/placeholder/300/200"
+                        }
+                    ],
+                    uptown: [
+                        {
+                            _id: "u1",
+                            name: "Margherita Pizza",
+                            description: "Fresh mozzarella, tomatoes, and basil on our signature crust",
+                            price: 14.99,
+                            category: "main",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "u2",
+                            name: "Caprese Salad",
+                            description: "Fresh mozzarella, tomatoes, and basil drizzled with balsamic glaze",
+                            price: 8.99,
+                            category: "starters",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "u3",
+                            name: "Tiramisu",
+                            description: "Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone",
+                            price: 7.99,
+                            category: "desserts",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "u4",
+                            name: "Grilled Vegetable Pasta",
+                            description: "Penne pasta with grilled vegetables in a light cream sauce",
+                            price: 13.99,
+                            category: "main",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "u5",
+                            name: "Garlic Knots",
+                            description: "Twisted bread knots brushed with garlic and herb butter",
+                            price: 4.99,
+                            category: "sides",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "u6",
+                            name: "Italian Soda",
+                            description: "Sparkling water with your choice of flavored syrup",
+                            price: 3.49,
+                            category: "drinks",
+                            image: "/api/placeholder/300/200"
+                        }
+                    ],
+                    westside: [
+                        {
+                            _id: "w1",
+                            name: "Fish Tacos",
+                            description: "Grilled fish with cabbage slaw and chipotle mayo in corn tortillas",
+                            price: 11.99,
+                            category: "main",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "w2",
+                            name: "Guacamole & Chips",
+                            description: "Fresh avocado dip with lime, cilantro, and crispy tortilla chips",
+                            price: 7.99,
+                            category: "starters",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "w3",
+                            name: "Churros",
+                            description: "Fried dough pastry dusted with cinnamon sugar and served with chocolate dip",
+                            price: 6.49,
+                            category: "desserts",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "w4",
+                            name: "Burrito Bowl",
+                            description: "Rice, beans, grilled veggies, cheese, and your choice of protein",
+                            price: 13.49,
+                            category: "main",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "w5",
+                            name: "Mexican Street Corn",
+                            description: "Grilled corn with cotija cheese, lime, and chili powder",
+                            price: 4.99,
+                            category: "sides",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "w6",
+                            name: "Horchata",
+                            description: "Sweet rice milk beverage with cinnamon",
+                            price: 3.49,
+                            category: "drinks",
+                            image: "/api/placeholder/300/200"
+                        }
+                    ],
+                    eastside: [
+                        {
+                            _id: "e1",
+                            name: "Pad Thai",
+                            description: "Stir-fried rice noodles with egg, tofu, bean sprouts, and peanuts",
+                            price: 12.99,
+                            category: "main",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "e2",
+                            name: "Spring Rolls",
+                            description: "Fresh vegetables and herbs wrapped in rice paper with peanut dipping sauce",
+                            price: 6.99,
+                            category: "starters",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "e3",
+                            name: "Mango Sticky Rice",
+                            description: "Sweet sticky rice with fresh mango and coconut cream",
+                            price: 7.49,
+                            category: "desserts",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "e4",
+                            name: "Green Curry",
+                            description: "Spicy Thai curry with vegetables and your choice of protein",
+                            price: 14.99,
+                            category: "main",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "e5",
+                            name: "Papaya Salad",
+                            description: "Shredded green papaya with tomatoes, chili, and lime dressing",
+                            price: 8.99,
+                            category: "sides",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "e6",
+                            name: "Thai Iced Tea",
+                            description: "Sweet and creamy orange-colored tea",
+                            price: 3.99,
+                            category: "drinks",
+                            image: "/api/placeholder/300/200"
+                        }
+                    ],
+                    northend: [
+                        {
+                            _id: "n1",
+                            name: "Steak Frites",
+                            description: "Grilled steak with crispy french fries and herb butter",
+                            price: 18.99,
+                            category: "main",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "n2",
+                            name: "French Onion Soup",
+                            description: "Rich beef broth with caramelized onions and melted gruyère cheese",
+                            price: 7.99,
+                            category: "starters",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "n3",
+                            name: "Crème Brûlée",
+                            description: "Classic vanilla custard with a caramelized sugar top",
+                            price: 8.49,
+                            category: "desserts",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "n4",
+                            name: "Roasted Salmon",
+                            description: "Oven-roasted salmon with lemon-dill sauce and seasonal vegetables",
+                            price: 16.99,
+                            category: "main",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "n5",
+                            name: "Truffle Mac & Cheese",
+                            description: "Creamy macaroni and cheese with truffle oil and breadcrumbs",
+                            price: 9.99,
+                            category: "sides",
+                            image: "/api/placeholder/300/200"
+                        },
+                        {
+                            _id: "n6",
+                            name: "Sparkling Water",
+                            description: "Premium sparkling mineral water",
+                            price: 2.99,
+                            category: "drinks",
+                            image: "/api/placeholder/300/200"
+                        }
+                    ]
+                };
+                
+                // Return menu items for the selected branch
+                if (menuItemsData[branch]) {
+                    resolve(menuItemsData[branch]);
+                } else {
+                    reject(new Error("Branch not found"));
+                }
+            } catch (error) {
+                reject(error);
+            }
+        }, 1000); // Simulate network delay
+    });
+}
+
+// In a real application, the MongoDB connection and schemas would be in a separate file
+// Here's an example of how you would set up MongoDB with Mongoose for this food delivery app:
+
+/*
+// MongoDB Connection and Schema Setup (server-side code)
+
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const twilio = require('twilio');
+
+const app = express();
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// MongoDB Connection
+mongoose.connect('mongodb://localhost:27017/foodDelivery', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+})
+.then(() => console.log('Connected to MongoDB'))
+.catch(err => console.error('Failed to connect to MongoDB:', err));
+
+// Schemas and Models
+const menuItemSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    price: {
+        type: Number,
+        required: true,
+        min: 0
+    },
+    category: {
+        type: String,
+        required: true,
+        enum: ['starters', 'main', 'sides', 'desserts', 'drinks']
+    },
+    image: {
+        type: String,
+        required: true
+    },
+    branch: {
+        type: String,
+        required: true,
+        enum: ['downtown', 'uptown', 'westside', 'eastside', 'northend']
+    },
+    isAvailable: {
+        type: Boolean,
+        default: true
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    }
+});
+
+const branchSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true,
+        unique: true,
+        trim: true
+    },
+    address: {
+        type: String,
+        required: true
+    },
+    phone: {
+        type: String,
+        required: true
+    },
+    openingHours: {
+        type: String,
+        required: true
+    },
+    isActive: {
+        type: Boolean,
+        default: true
+    }
+});
+
+const orderSchema = new mongoose.Schema({
+    orderNumber: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    customer: {
+        firstName: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        lastName: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        phone: {
+            type: String,
+            required: true
+        },
+        email: {
+            type: String,
+            required: true,
+            trim: true,
+            lowercase: true
+        },
+        address: {
+            type: String,
+            required: true
+        },
+        city: {
+            type: String,
+            required: true
+        },
+        zipCode: {
+            type: String,
+            required: true
+        },
+        instructions: String
+    },
+    items: [{
+        menuItem: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'MenuItem',
+            required: true
+        },
+        name: {
+            type: String,
+            required: true
+        },
+        price: {
+            type: Number,
+            required: true
+        },
+        quantity: {
+            type: Number,
+            required: true,
+            min: 1
+        }
+    }],
+    branch: {
+        type: String,
+        required: true
+    },
+    subtotal: {
+        type: Number,
+        required: true
+    },
+    deliveryFee: {
+        type: Number,
+        required: true
+    },
+    tax: {
+        type: Number,
+        required: true
+    },
+    total: {
+        type: Number,
+        required: true
+    },
+    paymentMethod: {
+        type: String,
+        required: true,
+        enum: ['card', 'cash']
+    },
+    verificationCode: {
+        type: String,
+        required: true
+    },
+    status: {
+        type: String,
+        required: true,
+        enum: ['confirmed', 'preparing', 'out_for_delivery', 'delivered', 'cancelled'],
+        default: 'confirmed'
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
+    deliveredAt: Date
+});
+
+// Create models
+const MenuItem = mongoose.model('MenuItem', menuItemSchema);
+const Branch = mongoose.model('Branch', branchSchema);
+const Order = mongoose.model('Order', orderSchema);
+
+// API Routes
+
+// Get menu items by branch
+app.get('/api/menu/:branch', async (req, res) => {
+    try {
+        const { branch } = req.params;
+        const menuItems = await MenuItem.find({ branch, isAvailable: true });
+        res.json(menuItems);
+    } catch (error) {
+        console.error('Error fetching menu items:', error);
+        res.status(500).json({ error: 'Failed to fetch menu items' });
+    }
+});
+
+// Get all branches
+app.get('/api/branches', async (req, res) => {
+    try {
+        const branches = await Branch.find({ isActive: true });
+        res.json(branches);
+    } catch (error) {
+        console.error('Error fetching branches:', error);
+        res.status(500).json({ error: 'Failed to fetch branches' });
+    }
+});
+
+// Create a new order
+app.post('/api/orders', async (req, res) => {
+    try {
+        const orderData = req.body;
+        
+        // Generate verification code
+        const verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
+        
+        // Generate order number
+        const timestamp = new Date().getTime().toString().slice(-6);
+        const random = Math.floor(1000 + Math.random() * 9000).toString();
+        const orderNumber = `FF${timestamp}${random}`;
+        
+        // Create new order
+        const newOrder = new Order({
+            ...orderData,
+            orderNumber,
+            verificationCode
+        });
+        
+        // Save to database
+        await newOrder.save();
+        
+        // Send SMS with verification code
+        await sendVerificationSMS(newOrder.customer.phone, verificationCode);
+        
+        res.status(201).json({
+            success: true,
+            orderNumber,
+            verificationCode
+        });
+    } catch (error) {
+        console.error('Error creating order:', error);
+        res.status(500).json({ error: 'Failed to create order' });
+    }
+});
+
+// Get order by order number
+app.get('/api/orders/:orderNumber', async (req, res) => {
+    try {
+        const { orderNumber } = req.params;
+        const order = await Order.findOne({ orderNumber });
+        
+        if (!order) {
+            return res.status(404).json({ error: 'Order not found' });
+        }
+        
+        res.json(order);
+    } catch (error) {
+        console.error('Error fetching order:', error);
+        res.status(500).json({ error: 'Failed to fetch order' });
+    }
+});
+
+// Update order status
+app.patch('/api/orders/:orderNumber/status', async (req, res) => {
+    try {
+        const { orderNumber } = req.params;
+        const { status } = req.body;
+        
+        const order = await Order.findOneAndUpdate(
+            { orderNumber },
+            { status },
+            { new: true }
+        );
+        
+        if (!order) {
+            return res.status(404).json({ error: 'Order not found' });
+        }
+        
+        // If status is "out_for_delivery", send SMS notification
+        if (status === 'out_for_delivery') {
+            await sendDeliveryNotification(order.customer.phone, order.orderNumber);
+        }
+        
+        // If status is "delivered", update deliveredAt timestamp
+        if (status === 'delivered') {
+            order.deliveredAt = new Date();
+            await order.save();
+        }
+        
+        res.json(order);
+    } catch (error) {
+        console.error('Error updating order status:', error);
+        res.status(500).json({ error: 'Failed to update order status' });
+    }
+});
+
+// Verify order with verification code
+app.post('/api/orders/verify', async (req, res) => {
+    try {
+        const { orderNumber, verificationCode } = req.body;
+        
+        const order = await Order.findOne({ orderNumber });
+        
+        if (!order) {
+            return res.status(404).json({ error: 'Order not found' });
+        }
+        
+        if (order.verificationCode !== verificationCode) {
+            return res.status(400).json({ error: 'Invalid verification code' });
+        }
+        
+        // If verification is successful, update status to delivered
+        order.status = 'delivered';
+        order.deliveredAt = new Date();
+        await order.save();
+        
+        res.json({ success: true, message: 'Order verified successfully' });
+    } catch (error) {
+        console.error('Error verifying order:', error);
+        res.status(500).json({ error: 'Failed to verify order' });
+    }
+});
+
+// Function to send verification SMS with Twilio
+async function sendVerificationSMS(phone, code) {
+    try {
+        const accountSid = process.env.TWILIO_ACCOUNT_SID;
+        const authToken = process.env.TWILIO_AUTH_TOKEN;
+        const client = twilio(accountSid, authToken);
+        
+        await client.messages.create({
+            body: `Your FoodFast verification code is: ${code}. Show this to our delivery person to receive your order.`,
+            from: process.env.TWILIO_PHONE_NUMBER,
+            to: phone
+        });
+        
+        console.log(`Verification SMS sent to ${phone}`);
+    } catch (error) {
+        console.error('Error sending verification SMS:', error);
+        throw error;
+    }
+}
+
+// Function to send delivery notification SMS
+async function sendDeliveryNotification(phone, orderNumber) {
+    try {
+        const accountSid = process.env.TWILIO_ACCOUNT_SID;
+        const authToken = process.env.TWILIO_AUTH_TOKEN;
+        const client = twilio(accountSid, authToken);
+        
+        await client.messages.create({
+            body: `Your FoodFast order #${orderNumber} is on the way! Remember to show your verification code to the delivery person.`,
+            from: process.env.TWILIO_PHONE_NUMBER,
+            to: phone
+        });
+        
+        console.log(`Delivery notification SMS sent to ${phone}`);
+    } catch (error) {
+        console.error('Error sending delivery notification SMS:', error);
+        throw error;
+    }
+}
+
+// Start server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
+*/
+
+// Function to track order status (simulated for frontend demo)
+function trackOrder(orderNumber) {
+    return new Promise((resolve, reject) => {
+        // In a real application, we would make an API call to MongoDB
+        // For demonstration, we'll simulate the API response
+        setTimeout(() => {
+            try {
+                // Get stored orders from localStorage
+                const orders = JSON.parse(localStorage.getItem('orders')) || [];
+                
+                // Find the order with the given order number
+                const order = orders.find(o => o.orderNumber === orderNumber);
+                
+                if (order) {
+                    resolve(order);
+                } else {
+                    reject(new Error("Order not found"));
+                }
+            } catch (error) {
+                reject(error);
+            }
+        }, 1000);
+    });
+}
+
+// Function to verify order with verification code (simulated for frontend demo)
+function verifyOrder(orderNumber, verificationCode) {
+    return new Promise((resolve, reject) => {
+        // In a real application, we would make an API call to MongoDB
+        // For demonstration, we'll simulate the API response
+        setTimeout(() => {
+            try {
+                // Get stored orders from localStorage
+                let orders = JSON.parse(localStorage.getItem('orders')) || [];
+                
+                // Find the order with the given order number
+                const orderIndex = orders.findIndex(o => o.orderNumber === orderNumber);
+                
+                if (orderIndex === -1) {
+                    reject(new Error("Order not found"));
+                    return;
+                }
+                
+                const order = orders[orderIndex];
+                
+                // Check verification code
+                if (order.verificationCode !== verificationCode) {
+                    reject(new Error("Invalid verification code"));
+                    return;
+                }
+                
+                // Update order status to delivered
+                order.status = 'delivered';
+                order.deliveredAt = new Date();
+                
+                // Update orders in localStorage
+                orders[orderIndex] = order;
+                localStorage.setItem('orders', JSON.stringify(orders));
+                
+                resolve({ success: true, message: "Order verified successfully" });
+            } catch (error) {
+                reject(error);
+            }
+        }, 1000);
+    });
+}
+
+// Export functions for use in other files
+// In a module-based application, you would use:
+// export { fetchMenuItems, trackOrder, verifyOrder };

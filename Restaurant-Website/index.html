@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodFast Delivery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <p>STOMACH <h3>CLINIC</h3></p>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn-cart" id="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Delicious Food Delivered Fast</h1>
+                <p>Order from our wide selection of dishes from multiple locations</p>
+                <div class="hero-cta">
+                    <a href="#menu" class="btn btn-primary btn-lg">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="location-selector">
+        <div class="container">
+            <div class="location-form">
+                <h2>Choose Your Branch</h2>
+                <div class="form-group">
+                    <label for="branch-select">Select Branch Location:</label>
+                    <select id="branch-select" class="form-control">
+                        <option value="">-- Select Branch --</option>
+                        <option value="downtown">ACCRA</option>
+                        <option value="uptown">KUMASI</option>
+                        <option value="westside">SUNYANI</option>
+                        <option value="eastside">TAKORADI</option>
+                        <option value="northend">TARKWA</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" id="confirm-branch">Confirm Location</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <h2 class="section-title">Our Menu</h2>
+            <div class="menu-filters">
+                <a href="#menu-items-container"><button class="filter-btn active" data-filter="menu-items" onclick="menu-items">All</button></a>
+                <a href="#Breakfast"><button class="filter-btn" data-filter="Breakfast">Breakfast</button></a>
+                <button class="filter-btn" data-filter="Sides">Sides</button>
+                <button class="filter-btn" data-filter="Desserts">Desserts</button>
+                <button class="filter-btn" data-filter="Drinks">Drinks</button>
+                <button class="filter-btn" data-filter="Main Dishes">Main Dishes</button>
+            </div>
+            <div class="menu-items" id="menu-items-container">
+               <div id="Breakfast">
+                <div>
+                    <h1>Breakfast</h1>
+                    <img src="a.png" alt="">
+                    <img src="Brownies.jpeg" alt="">
+                </div>
+                
+               </div>
+               <div id="Main Dishes">
+                <h1>Main Dishes</h1>
+                <img src="Banku and Tilapia a.jpeg" alt="">
+                <img src="Banga Soup with Starch a.jpeg" alt="">
+                <img src="Eba and Okro Soup a.jpeg" alt="">
+                <img src="Chicken or Goat Kebab with Fried Rice a.jpeg" alt="">
+                <img src="Egusi Soup with Pounded Yam a.jpeg" alt="">
+                <img src="Fufu with Light Soup a.jpeg" alt="">
+                <img src="Jollof Rice a.jpeg" alt="">
+                <img src="Kelewele with Grilled Chicken a.jpeg" alt="">
+                <img src="Kenkey with Fried Fish and Shito  a.jpeg" alt="">
+                <img src="Konkonte and Groundnut Soup a.jpeg" alt="">
+                <img src="Nyama Choma (Grilled Meat) a.jpeg" alt="">
+                <img src="Pepper Soup with Yam or Rice a.jpeg" alt="">
+                <img src="Pilau Rice with Beef a.jpeg" alt="">
+                <img src="Tuo Zaafi (TZ) a.jpeg" alt="">
+                <img src="Waakye a.jpeg" alt="">
+               </div>
+               <div id="Sides">
+                <h1>Sides</h1>
+                <img src="Caesar Salad d.jpeg" alt="">
+                <img src="Coleslaw d.jpeg" alt="">
+                <img src="French Fries d.jpeg" alt="">
+                <img src="Garlic Rice d.jpeg" alt="">
+                <img src="Mashed Potatoes d.jpeg" alt="">
+                <img src="Onion Rings d.jpeg" alt="">
+                <img src="Steamed Vegetables d.jpeg" alt="">
+                <img src="Sweet Potato Fries d.jpeg" alt="">
+
+               </div>
+               <div id="Desserts">
+                <h1>Desserts</h1>
+                <img src="Apple Pie t.jpeg" alt="">
+                <img src="Banana Split t.jpeg" alt="">
+                <img src="Cheesecake t.jpeg" alt="">
+                <img src="Chocolate Lava Cake t.jpeg" alt="">
+                <img src="Fruit Salad t.jpeg" alt="">
+                <img src="Ice Cream Sundae t.jpeg" alt="">
+                <img src="Tiramisu t.jpeg" alt="">
+               </div>
+               <div id="Drinks">
+                <h1>Drinks</h1>
+                <img src="Bottled Water.jpeg" alt="">
+                <img src="Coca-Cola w.jpeg" alt="">
+                <img src="Cold Coffee w.jpeg" alt="">
+                <img src="Fresh Lemonade w.jpeg" alt="">
+                <img src="Mango Smoothie w.jpeg" alt="">
+                <img src="Orange Juice w.jpeg" alt="">
+                
+               </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Your Order</h2>
+                <button class="close-cart">&times;</button>
+            </div>
+            <div class="cart-items" id="cart-items-container">
+                <!-- Cart items will be added dynamically -->
+                <div class="empty-cart">
+                    <i class="fas fa-shopping-basket"></i>
+                    <p>Your cart is empty</p>
+                </div>
+            </div>
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Delivery Fee:</span>
+                    <span id="delivery-fee">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax:</span>
+                    <span id="cart-tax">$0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+            </div>
+            <div class="cart-actions">
+                <button class="btn btn-outline" id="clear-cart">Clear Cart</button>
+                <button class="btn btn-primary" id="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="checkout-section" class="checkout-section">
+        <div class="container">
+            <h2 class="section-title">Checkout</h2>
+            <div class="checkout-container">
+                <div class="checkout-form">
+                    <h3>Delivery Information</h3>
+                    <form id="delivery-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Delivery Address</label>
+                            <input type="text" id="address" class="form-control" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="zipCode">ZIP Code</label>
+                                <input type="text" id="zipCode" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="deliveryInstructions">Delivery Instructions (Optional)</label>
+                            <textarea id="deliveryInstructions" class="form-control"></textarea>
+                        </div>
+                    </form>
+
+                    <h3>Payment Information</h3>
+                    <form id="payment-form">
+                        <div class="form-group">
+                            <label for="cardNumber">Card Number</label>
+                            <input type="text" id="cardNumber" class="form-control" placeholder="1234 5678 9012 3456" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiryDate">Expiry Date</label>
+                                <input type="text" id="expiryDate" class="form-control" placeholder="MM/YY" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" class="form-control" placeholder="123" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="nameOnCard">Name on Card</label>
+                            <input type="text" id="nameOnCard" class="form-control" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-items" id="summary-items-container">
+                        <!-- Order summary items will be added dynamically -->
+                    </div>
+                    <div class="summary-totals">
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="summary-subtotal">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Delivery Fee:</span>
+                            <span id="summary-delivery-fee">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax:</span>
+                            <span id="summary-tax">$0.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total:</span>
+                            <span id="summary-total">$0.00</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block" id="place-order-btn">Place Order</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Stomach Clinic</h2>
+                    <p>Stomach Clinic was founded in 2015 with a simple mission: to deliver delicious, high-quality food to our customers quickly and conveniently. What started as a single location has grown into multiple branches across the city.</p>
+                    <p>We take pride in our diverse menu, featuring dishes prepared with fresh ingredients and traditional recipes. Our team of experienced chefs and dedicated delivery staff work together to ensure your food arrives hot and tasty.</p>
+                    <p>At Stomach Clinic, customer satisfaction is our top priority. We continuously strive to improve our service and expand our offerings to meet your needs.</p>
+                </div>
+                <div class="about-image">
+                    <img src="/api/placeholder/500/300" alt="About Stomach Clinic">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="contact-name">Name</label>
+                            <input type="text" id="contact-name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Subject</label>
+                            <input type="text" id="contact-subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Headquarters</h3>
+                            <p>123 Food Street, Cuisine City, FC 12345</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>Customer Service: (555) 123-4567</p>
+                            <p>Order Support: (555) 987-6543</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@StomachClinic.com</p>
+                            <p>support@StomachClinic.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Business Hours</h3>
+                            <p>Monday - Sunday: 10:00 AM - 10:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <p>Stomach Clinic</p>
+                    <p>Delicious food delivered fast to your doorstep.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#locations">Locations</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Delivery Information</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <form id="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email Address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </div>
+                    </form>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Stomach Clinic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/checkout.js"></script>
+    <script src="js/api.js"></script>
+</body>
+</html>
